@@ -13,11 +13,9 @@ jobs:
     - name: Executando os comandos remotos via ssh
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
+        host: 34.237.125.57
+        username: ec2-user
         key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
+        port: 22
         script: |
-          cd /var/www/html/radioccd/
-          git pull https://${{ secrets.EMAIL }}:${{ secrets.PASS_EMAIL }}@github.com/Universidade-do-Contestado/radioccd.git
-          git checkout -f
+          cd /var/www/html/testedeploy/
